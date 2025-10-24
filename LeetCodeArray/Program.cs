@@ -21,9 +21,31 @@
         }
         return final;
     }
+    public static int RemoveDuplicates(int[] nums)
+    {
+        int newlength = 0;
+        for(int i = 0; i < nums.Length; i++)
+        {
+            bool isDuplicate = false;
+            for(int j = 0; j < newlength; j++)
+            {
+                if(nums[i] == nums[j])
+                {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+            if(!isDuplicate)
+            {
+                nums[newlength] = nums[i];
+                newlength++;
+            }
+        }
+        return newlength;
+    }
     private static void Main(string[] args)
     {
-        int[] array = { 2, 5, 8, 11, 12 };
+        int[] array = { 4, 5, 2, 8, 11, 12 };
         int target = 10;
 
         int[] result = TwoSum(array, target);
@@ -31,5 +53,13 @@
         {
             Console.Write($"{item}  ");
         }
+
+        int[] arrayNum = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+        int res = RemoveDuplicates(arrayNum);
+        foreach (var item in arrayNum)
+        {
+            Console.Write($"{item}  ");
+        }
+        Console.WriteLine(res);
     }
 }
