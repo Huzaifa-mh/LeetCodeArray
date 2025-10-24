@@ -21,6 +21,7 @@
         }
         return final;
     }
+    //still need to optimize this code
     public static int RemoveDuplicates(int[] nums)
     {
         int newlength = 0;
@@ -43,6 +44,7 @@
         }
         return newlength;
     }
+
     private static void Main(string[] args)
     {
         int[] array = { 4, 5, 2, 8, 11, 12 };
