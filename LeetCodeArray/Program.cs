@@ -21,46 +21,50 @@
         }
         return final;
     }
-    //still need to optimize this code
-    public static int RemoveDuplicates(int[] nums)
+
+    public int RemoveDuplicates(int[] nums)
     {
         int newlength = 0;
-        for(int i = 0; i < nums.Length; i++)
+
+        for (int i = 0; i < nums.Length; i++)
         {
-            bool isDuplicate = false;
-            for(int j = 0; j < newlength; j++)
+            bool isduplicate = false;
+
+            for (int j = 0; j < newlength; j++)
             {
-                if(nums[i] == nums[j])
+                if (nums[i] == nums[j])
                 {
-                    isDuplicate = true;
+                    isduplicate = true;
                     break;
                 }
             }
-            if(!isDuplicate)
+
+            if (isduplicate == false)
             {
                 nums[newlength] = nums[i];
                 newlength++;
             }
         }
-        return newlength;
+
+        return newlength; 
     }
 
     //error in the function
-    public static int LinearSearch(int[] nums, int target)
-    {
-        for(int i = 0; i < nums.Length; i++)
-        {
-            if (nums[i] == target)
-            {
-                return i;
-            }
-            else
-            {
-                return -1;
-            }
-        }
+    //public static int LinearSearch(int[] nums, int target)
+    //{
+    //    for(int i = 0; i < nums.Length; i++)
+    //    {
+    //        if (nums[i] == target)
+    //        {
+    //            return i;
+    //        }
+    //        else
+    //        {
+    //            return -1;
+    //        }
+    //    }
 
-    }
+    //}
     private static void Main(string[] args)
     {
         int[] array = { 4, 5, 2, 8, 11, 12 };
@@ -71,8 +75,8 @@
         {
             Console.Write($"{item}  ");
         }
-        int output = LinearSearch(array, 8);
-        Console.WriteLine((output > 0)? $"Found at index {output}": "Target not found");
+        //int output = LinearSearch(array, 8);
+        //Console.WriteLine((output > 0)? $"Found at index {output}": "Target not found");
 
         int[] arrayNum = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
         int res = RemoveDuplicates(arrayNum);
