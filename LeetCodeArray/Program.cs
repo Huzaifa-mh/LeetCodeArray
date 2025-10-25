@@ -22,7 +22,7 @@
         return final;
     }
 
-    public int RemoveDuplicates(int[] nums)
+    public static int RemoveDuplicates(int[] nums)
     {
         int newlength = 0;
 
@@ -48,7 +48,19 @@
 
         return newlength; 
     }
-
+    public static int RemoveElement(int[] nums, int val)
+    {
+        int length = 0;
+        for(int i = 0; i< nums.Length; i++)
+        {
+            if (nums[i] != val)
+            {
+                nums[length] = nums[i];
+                length++;
+            }
+        }
+        return length;
+    }
     //error in the function
     //public static int LinearSearch(int[] nums, int target)
     //{
